@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    android:layout_gravity="center"
+    tools:layout_editor_absoluteY="25dp">
+
+    <TextView
+        android:id="@+id/bank_name_mini_statement"
+        style="@style/TextAppearance_title"
+        android:paddingTop="@dimen/padding_75dp"
+        app:layout_constraintBottom_toTopOf="@id/currentBalanceDisplay"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/currentBalanceDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorWhiteBankName"
+        android:textSize="@dimen/font_size_15sp"
+        android:paddingTop="@dimen/padding_10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/miniStatementRecyclerView"
+        app:layout_constraintTop_toBottomOf="@id/bank_name_mini_statement" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/miniStatementRecyclerView"
+        android:layout_width="@dimen/margin_0dp"
+        android:layout_height="@dimen/margin_0dp"
+        app:layout_constraintBottom_toTopOf="@id/btnCancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bank_name_mini_statement" />
+
+    <TextView
+        android:id="@+id/noTransactionDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorWhiteBankName"
+        android:textSize="@dimen/font_size_20sp"
+        android:paddingBottom="@dimen/padding_300dp"
+        app:layout_constraintBottom_toTopOf="@id/btnCancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.432"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/miniStatementRecyclerView"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_114dp"
+        android:layout_marginLeft="@dimen/margin_114dp"
+        android:layout_marginEnd="@dimen/margin_114dp"
+        android:layout_marginRight="@dimen/margin_114dp"
+        android:layout_marginBottom="@dimen/margin_30dp"
+        android:background="@drawable/round_corners"
+        android:text="@string/text_button_cancel"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/miniStatementRecyclerView"
+        app:layout_constraintStart_toEndOf="@id/miniStatementRecyclerView"
+        app:layout_constraintTop_toBottomOf="@id/miniStatementRecyclerView" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
